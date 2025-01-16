@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 import 'package:treval_app/core/utils/colors.dart';
-import 'package:treval_app/homepage/presentation/widgets/tariflar_container.dart';
 
 class SevimlilarMainContainer extends StatelessWidget {
   const SevimlilarMainContainer({
@@ -24,13 +23,13 @@ class SevimlilarMainContainer extends StatelessWidget {
     return Center(
       child: Stack(
           children: [
-
         ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Image.asset(
             image,
             width: 361,
             height: 222,
+            fit: BoxFit.cover,
           ),
         ),
         Padding(

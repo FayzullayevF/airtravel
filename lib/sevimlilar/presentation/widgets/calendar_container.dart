@@ -35,6 +35,7 @@ class CalendarContainer extends StatelessWidget {
               width: 3,
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   text,
@@ -43,21 +44,22 @@ class CalendarContainer extends StatelessWidget {
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'Urbanist',
+                    height: 1,
                   ),
                 ),
-                // SizedBox(height: 0.5,),
                 Text(
                   text1,
                   style: TextStyle(
-                    color: AppColor.mainpagetextcolor,
+                    color: AppColor.mainpagetextcolor.withValues(alpha: 0.5),
                     fontSize: 4,
                     fontWeight: FontWeight.w600,
                     fontFamily: 'Urbanist',
+                    height: 1,
                   ),
                 ),
               ],
             ),
-            SizedBox(width: 1,),
+            SizedBox(width: 2,),
             Text(
               text2,
               style: TextStyle(

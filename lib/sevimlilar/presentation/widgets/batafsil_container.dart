@@ -12,6 +12,14 @@ class BatafsilContainer extends StatelessWidget {
       width: 345,
       height: 40,
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            offset: Offset(1, 1),
+            blurRadius: 3,
+            spreadRadius: 1,
+          )
+        ],
         borderRadius: BorderRadius.circular(100),
         color: AppColor.mainpagetextcolor,
       ),

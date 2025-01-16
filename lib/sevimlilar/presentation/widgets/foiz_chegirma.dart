@@ -10,7 +10,10 @@ class FoizChegirma extends StatelessWidget {
       width: 19,
       height: 18,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(9),
+        borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(5),
+          topLeft: Radius.circular(5)
+        ),
         color: AppColor.chegirmacolor,
       ),
       child: Center(

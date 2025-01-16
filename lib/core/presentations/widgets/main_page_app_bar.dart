@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg.dart';
 import 'package:treval_app/core/utils/colors.dart';
 
-class MainPageAppBar extends StatelessWidget implements PreferredSizeWidget{
+class MainPageAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MainPageAppBar({super.key});
+
   @override
-  Size get preferredSize => Size(100,100);
+  Size get preferredSize => Size(100, 100);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,12 @@ class MainPageAppBar extends StatelessWidget implements PreferredSizeWidget{
       child: AppBar(
         leading: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          child: SvgPicture.asset('assets/icons/back-arrow.svg'),
+          child: GestureDetector(
+            onTap: (){
+              context.go("/");
+            },
+            child: SvgPicture.asset('assets/icons/back-arrow.svg'),
+          ),
         ),
         centerTitle: true,
         title: Padding(

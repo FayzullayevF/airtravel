@@ -120,7 +120,7 @@ class Viza extends StatelessWidget {
           ],
         ),
       ),
-    );;
+    );
   }
 }
 
