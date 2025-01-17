@@ -11,6 +11,6 @@ class AppColor{
   static const shoshilingcontainer1 = Color(0xFF3BB77E);
   static const shoshilingcontainer2 = Color(0xFFF6980A);
   static const timecontainercolor = Color(0xFFFAFAFA);
-  static const timecontainertext = Color(0xFF4B4B4B);
-
+  static const sixcontainerborder = Color(0xFF069C57);
+  static const chegirmacontainer = Color(0xFFE4DC19);
 }

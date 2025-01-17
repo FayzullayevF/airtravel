@@ -20,7 +20,7 @@ class TimeContainer extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            color: AppColor.timecontainertext,
+            color: AppColor.containerbordercolor,
             fontFamily: "Urbanist",
             fontSize: 20,
             fontWeight: FontWeight.bold,

@@ -17,6 +17,7 @@ class ShoshilingItem extends StatelessWidget {
           width: 36,
           height: 36,
         ),
+        SizedBox(width: 13,),
         Column(
           children: [
             Text(
@@ -42,6 +43,7 @@ class ShoshilingItem extends StatelessWidget {
             )
           ],
         ),
+        SizedBox(width: 13,),
         ShoshilingTimer()
       ],
     );

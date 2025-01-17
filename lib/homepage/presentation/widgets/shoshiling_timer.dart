@@ -11,7 +11,7 @@ class ShoshilingTimer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(width: 40,),
+        SizedBox(width: 48,),
         TimeContainer(text: "12"),
         SizedBox(width: 5,),
         IkkiNuqtaText(text: ":"),
@@ -20,7 +20,7 @@ class ShoshilingTimer extends StatelessWidget {
         SizedBox(width: 5,),
         IkkiNuqtaText(text: ":"),
         SizedBox(width: 5,),
-        TimeContainer(text: "30")
+        TimeContainer(text: "30"),
       ],
     );
   }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FirstPicture extends StatelessWidget {
-  const FirstPicture({super.key});
+  const FirstPicture({super.key, required this.image});
+
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class FirstPicture extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         child: Image(
             image: AssetImage(
-              'assets/images/places/makka.png',
+              image,
             ),
           width: 380,
           height: 120,

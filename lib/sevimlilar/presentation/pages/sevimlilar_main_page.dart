@@ -80,28 +80,28 @@ class SevimlilarMainPage extends StatelessWidget {
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 22),
+                        padding: const EdgeInsets.only(left: 16),
                         child: SugurtaChiptaEtc(
                           svg: 'assets/icons/transport.svg',
                           text: "Sug'urta",
                         ),
                       ),
-                      const SizedBox(width: 4),
+                      const SizedBox(width: 3),
                       SugurtaChiptaEtc(
                         svg: 'assets/icons/transport.svg',
                         text: "Chipta",
                       ),
-                      const SizedBox(width: 4),
+                      const SizedBox(width: 3),
                       AviaChipta(
                         svg1: 'assets/icons/transport.svg',
                         text1: "Aviachipta",
                       ),
-                      const SizedBox(width: 4),
+                      const SizedBox(width: 3),
                       Viza(
                         svg2: 'assets/icons/transport.svg',
                         text2: 'Viza',
                       ),
-                      const SizedBox(width: 4),
+                      const SizedBox(width: 3),
                       SixContainer(),
                     ],
                   ),

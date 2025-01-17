@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 import 'package:treval_app/core/utils/colors.dart';
 
-class SugurtaChiptaEtc extends StatelessWidget {
-  const SugurtaChiptaEtc({
+class Sugurta_and_chipta extends StatelessWidget {
+  const Sugurta_and_chipta({
     super.key,
     required this.svg,
     required this.text,
+    required this.widths
   });
 
   final String svg, text;
+  final double widths;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 64,
+      width: widths,
       height: 19,
       decoration: BoxDecoration(
           border: Border.all(
