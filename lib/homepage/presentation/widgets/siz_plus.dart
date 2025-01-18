@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:treval_app/core/utils/colors.dart';
 
 class SizPlus extends StatelessWidget {
-  const SizPlus({super.key, required this.boyi, required this.eni });
+  const SizPlus({super.key, required this.boyi, required this.eni});
+
   final double boyi, eni;
 
   @override
@@ -10,35 +11,32 @@ class SizPlus extends StatelessWidget {
     return Container(
       width: boyi,
       height: eni,
+      padding: EdgeInsets.symmetric(horizontal: 1, vertical: 1),
       decoration: BoxDecoration(
+        border: Border.all(
+          color: AppColor.mainpagetextcolor,
+          width: 2,
+        ),
+        borderRadius: BorderRadius.circular(10),
+        color: AppColor.containerinsidetextcolor,
+      ),
+      child: Container(
+        height: 15,
+        width: 29,
+        padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0.3),
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: AppColor.mainpagetextcolor,
-            width: 2,
-          )),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 1),
-        child: Container(
-            width: 29,
-            height: 15,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: AppColor.mainpagetextcolor,
-                border: Border.all(
-                  width: 2,
-                  color: AppColor.sixcontainerborder,
-                )),
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(
-                "6 +",
-                style: TextStyle(
-                    color: AppColor.containerinsidetextcolor,
-                    fontFamily: 'Urbanist',
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold),
-              ),
-            )),
+          color: AppColor.mainpagetextcolor,
+        ),
+        child: Text(
+          "6 +",
+          style: TextStyle(
+              color: AppColor.containerinsidetextcolor,
+              fontFamily: 'Urbanist',
+              fontSize: 10,
+              fontWeight: FontWeight.bold
+          ),
+        ),
       ),
     );
   }

@@ -7,8 +7,8 @@ class ChegirmaFoizRotate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Transform.rotate(
-      angle: -math.pi/4,
+    return Transform(
+      transform: Matrix4.rotationZ(math.pi / 4),
       child: Container(
         height: 11,
         width: 48,

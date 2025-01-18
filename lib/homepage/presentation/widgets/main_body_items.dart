@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:treval_app/core/utils/colors.dart';
+import 'package:treval_app/homepage/presentation/widgets/bottom_container.dart';
 import 'package:treval_app/homepage/presentation/widgets/first_picture.dart';
 import 'package:treval_app/homepage/presentation/widgets/maincontainer.dart';
 import 'package:treval_app/homepage/presentation/widgets/text_field.dart';
@@ -26,7 +27,9 @@ class _MainBodyItemsState extends State<MainBodyItems> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(scrollDirection: Axis.vertical, children: [
+    return ListView(
+        scrollDirection: Axis.vertical,
+        children: [
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -61,9 +64,11 @@ class _MainBodyItemsState extends State<MainBodyItems> {
                     bottom: 12,
                     left: MediaQuery.of(context).size.width / 2 - ((images.length * 24) / 2),
                     child: Container(
+                      width: 62,
+                      height: 8,
                       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColor.containerinsidetextcolor,
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
@@ -144,6 +149,9 @@ class _MainBodyItemsState extends State<MainBodyItems> {
             height: 15,
           ),
           MainContainer(),
+          SizedBox(height: 15,),
+          Center(child: BottomContainer(makka_photo: "assets/images/offers/offers_1.png")),
+
         ],
       ),
     ]);

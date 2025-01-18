@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:treval_app/core/utils/colors.dart';
+import 'package:treval_app/homepage/presentation/widgets/afzallik_container.dart';
 import 'package:treval_app/homepage/presentation/widgets/calendar_container.dart';
+import 'package:treval_app/homepage/presentation/widgets/chegirmalar_container_two.dart';
 import 'package:treval_app/homepage/presentation/widgets/flight_calendar_container.dart';
 import 'package:treval_app/homepage/presentation/widgets/flight_land_row.dart';
 import 'package:treval_app/homepage/presentation/widgets/heart_container.dart';
@@ -10,8 +12,8 @@ import 'package:treval_app/homepage/presentation/widgets/sugurta_chipta_etc.dart
 import 'package:treval_app/homepage/presentation/widgets/texts_main.dart';
 import 'package:treval_app/sevimlilar/presentation/widgets/chegirmalar_container.dart';
 
-class DiscountContainer extends StatelessWidget {
-  const DiscountContainer({
+class BottomContainer extends StatelessWidget {
+  const BottomContainer({
     super.key,
     required this.makka_photo,
   });
@@ -22,7 +24,7 @@ class DiscountContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 302,
-      height: 537,
+      height: 670,
       padding: EdgeInsets.all(6),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -33,7 +35,7 @@ class DiscountContainer extends StatelessWidget {
         ),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         spacing: 10,
         children: [
           Stack(
@@ -148,23 +150,22 @@ class DiscountContainer extends StatelessWidget {
           ),
           // SizedBox(height: 3,),
           SizedBox(
-            height: 100,
+            height: 140,
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  ChegirmalarContainer(
-                      title: "Ekonom", text: "1200\$", text1: "1300\$"),
+                 AfzallikContainer(title: "Ekonom", text: "1200\$", text1: "1300\$", afzallik: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fugit, iste unde voluptatem tempore vero eveniet quia conseq ...yana "),
                   SizedBox(
                     width: 8,
                   ),
-                  ChegirmalarContainer(
-                      title: "Standart", text: "1400\$", text1: "1600\$"),
+                  ChegirmalarContainerTwo(
+                      title: "Standart", text: "1400\$", text1: "1600\$", afzallik: "Afzalliklar",),
                   SizedBox(
                     width: 3,
                   ),
-                  ChegirmalarContainer(
-                      title: "Premium", text: "1600\$", text1: "1800\$"),
+                  ChegirmalarContainerTwo(
+                      title: "Premium", text: "1600\$", text1: "1800\$", afzallik: "Afzalliklar",),
                 ],
               ),
             ),

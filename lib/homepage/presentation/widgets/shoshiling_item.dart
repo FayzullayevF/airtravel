@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 import 'package:treval_app/core/utils/colors.dart';
-import 'package:treval_app/homepage/presentation/widgets/ikki_nuqta_text.dart';
 import 'package:treval_app/homepage/presentation/widgets/shoshiling_timer.dart';
-import 'package:treval_app/homepage/presentation/widgets/time_container.dart';
 
 class ShoshilingItem extends StatelessWidget {
   const ShoshilingItem({super.key});

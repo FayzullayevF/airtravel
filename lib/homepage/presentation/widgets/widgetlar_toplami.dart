@@ -16,29 +16,31 @@ class WidgetlarToplami extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-                child: ImageFiltered(
-                  imageFilter: ImageFilter.blur(sigmaY: 1, sigmaX: 1),
-                  child: Image(
-                    image: AssetImage(image),
-                    width: 104,
-                    height: 52,
-                    fit: BoxFit.cover,
-                  ),
+              child: ColorFiltered(
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.3),
+                  BlendMode.darken,
                 ),
-
+                child: Image(
+                  image: AssetImage(image),
+                  width: 104,
+                  height: 52,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             Positioned.fill(
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
-                      text,
-                      style: TextStyle(
-                        color: AppColor.containerinsidetextcolor,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16,
-                        fontFamily: "Urbanist",
-                      ),
-                    ),
+                  text,
+                  style: TextStyle(
+                    color: AppColor.containerinsidetextcolor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    fontFamily: "Urbanist",
+                  ),
+                ),
               ),
             ),
           ],

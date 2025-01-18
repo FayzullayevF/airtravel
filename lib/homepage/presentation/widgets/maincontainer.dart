@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:treval_app/core/utils/colors.dart';
 import 'package:treval_app/homepage/presentation/widgets/discount_container.dart';
 import 'package:treval_app/homepage/presentation/widgets/shoshiling_item.dart';
-import 'package:treval_app/homepage/presentation/widgets/texts_main.dart';
 
 class MainContainer extends StatelessWidget {
   const MainContainer({super.key});
@@ -32,8 +31,25 @@ class MainContainer extends StatelessWidget {
             ),
             child: ShoshilingItem(),
           ),
-          SizedBox(height: 25,),
-          DiscountContainer(makka_photo: "assets/images/offers/offers_1.png"),
+          SizedBox(
+            height: 25,
+          ),
+          Container(
+            height: 530,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                DiscountContainer(
+                    makka_photo: "assets/images/offers/offers_1.png"),
+                SizedBox(width: 10,),
+                DiscountContainer(
+                    makka_photo: "assets/images/offers/offers_1.png"),
+                SizedBox(width: 10,),
+                DiscountContainer(
+                    makka_photo: "assets/images/offers/offers_1.png"),
+              ],
+            ),
+          ),
         ],
       ),
     );
