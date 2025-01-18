@@ -27,9 +27,7 @@ class _MainBodyItemsState extends State<MainBodyItems> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-        scrollDirection: Axis.vertical,
-        children: [
+    return ListView(scrollDirection: Axis.vertical, children: [
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -44,61 +42,59 @@ class _MainBodyItemsState extends State<MainBodyItems> {
             padding: const EdgeInsets.only(left: 20, right: 24),
             child: Container(
               height: 120,
-              child: Stack(
-                children: [
-                  PageView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: images.length,
-                    onPageChanged: (index) {
-                      setState(() {
-                        current_page = index;
-                      });
-                    },
-                    itemBuilder: (context, index) {
-                      return FirstPicture(
-                        image: images[index],
-                      );
-                    },
-                  ),
-                  Positioned(
-                    bottom: 12,
-                    left: MediaQuery.of(context).size.width / 2 - ((images.length * 24) / 2),
-                    child: Container(
-                      width: 62,
-                      height: 8,
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: AppColor.containerinsidetextcolor,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: Offset(0, 4),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Stack(
+                  children: [
+                    PageView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: images.length,
+                      onPageChanged: (index) {
+                        setState(() {
+                          current_page = index;
+                        });
+                      },
+                      itemBuilder: (context, index) {
+                        return FirstPicture(
+                          image: images[index],
+                        );
+                      },
+                    ),
+                    Positioned(
+                      bottom: 12,
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                        child: Container(
+                          height: 8,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            color: AppColor.containerinsidetextcolor,
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                        ],
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(
-                          images.length,
-                              (dotIndex) => AnimatedContainer(
-                            duration: Duration(milliseconds: 300),
-                            margin: EdgeInsets.symmetric(horizontal: 4),
-                            height: 8,
-                            width: current_page == dotIndex ? 16 : 8,
-                            decoration: BoxDecoration(
-                              color: current_page == dotIndex
-                                  ? Colors.green
-                                  : Colors.grey.shade400,
-                              borderRadius: BorderRadius.circular(100),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: List<Widget>.generate(
+                                images.length,
+                                (index) => AnimatedContainer(
+                                  duration: Duration(milliseconds: 300),
+                                      height: 4,
+                                      width: current_page == index ? 16 : 4,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(2),
+                                        color: current_page == index
+                                            ? AppColor.mainpagetextcolor
+                                            : AppColor.containerbordercolor
+                                                .withValues(alpha: 0.5),
+                                      ),
+                                    )
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -149,9 +145,12 @@ class _MainBodyItemsState extends State<MainBodyItems> {
             height: 15,
           ),
           MainContainer(),
-          SizedBox(height: 15,),
-          Center(child: BottomContainer(makka_photo: "assets/images/offers/offers_1.png")),
-
+          SizedBox(
+            height: 15,
+          ),
+          Center(
+              child: BottomContainer(
+                  makka_photo: "assets/images/offers/offers_1.png")),
         ],
       ),
     ]);

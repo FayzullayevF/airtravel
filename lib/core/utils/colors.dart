@@ -13,4 +13,7 @@ class AppColor{
   static const timecontainercolor = Color(0xFFFAFAFA);
   static const sixcontainerborder = Color(0xFF069C57);
   static const chegirmacontainer = Color(0xFFE4DC19);
+  static const animatedcontainercolor = Color(0xFFE0E0E0);
+
+
 }
