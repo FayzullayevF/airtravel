@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:treval_app/BatafsilPage/data/models/batafsil_page_model.dart';
 import 'package:treval_app/BatafsilPage/data/repositories/batafsil_page_repository.dart';
 import 'package:treval_app/BatafsilPage/presentation/pages/batafsil_page_view_model.dart';
+import 'package:treval_app/RoyxatdanOtish/presentation/pages/malumot_kiritish.dart';
+import 'package:treval_app/RoyxatdanOtish/presentation/pages/royxatdan_otish.dart';
+import 'package:treval_app/RoyxatdanOtish/presentation/pages/sms_code_page.dart';
 import 'package:treval_app/core/client.dart';
 import 'package:treval_app/homepage/presentation/pages/travel_main_page.dart';
+import 'package:treval_app/homepage/presentation/widgets/card.dart';
+import 'package:treval_app/homepage/presentation/widgets/edit_data.dart';
+import 'package:treval_app/homepage/presentation/widgets/orders.dart';
+import 'package:treval_app/homepage/presentation/widgets/wallet.dart';
+import 'package:treval_app/onboarding/presentation/pages/onboarding_page.dart';
+import 'package:treval_app/onboarding/presentation/widgets/onborading_one.dart';
 import 'package:treval_app/sevimlilar/presentation/pages/sevimlilar_main_page.dart';
 
 import 'BatafsilPage/presentation/pages/batafsil_page_view.dart';
+import 'homepage/presentation/pages/profile.dart';
 
 GoRouter router = GoRouter(routes: [
   GoRoute(
@@ -17,7 +26,7 @@ GoRouter router = GoRouter(routes: [
   ),
   GoRoute(
     path: "/",
-    builder: (context, state) => TravelMainPage(),
+    builder: (context, state) => MalumotKiritish(),
   ),
   GoRoute(
     path: "/batafsil",
@@ -28,7 +37,39 @@ GoRouter router = GoRouter(routes: [
     ),
     );
     }
-)
+),
+  GoRoute(
+    path: "/cards",
+    builder: (context, state) => Cards(),
+  ),
+  GoRoute(
+    path: "/orders",
+    builder: (context, state) => Orders(),
+  ),
+  GoRoute(
+    path: "/wallet",
+    builder: (context, state) => Wallet(),
+  ),
+  GoRoute(
+    path: "/profile",
+    builder: (context, state) => ProfilePage(),
+  ),
+  GoRoute(
+    path: "/editprofile",
+    builder: (context, state) => EditData(),
+  ),
+  GoRoute(
+    path: "/royxatdanotish",
+    builder: (context, state) => RoyxatdanOtishPage(),
+  ),
+  GoRoute(
+    path: "/smscodepage",
+    builder: (context, state) => SmsCodePage(),
+  ),
+  GoRoute(
+    path: "/malumotlar",
+    builder: (context, state) => MalumotKiritish(),
+  ),
 ]
 );
 

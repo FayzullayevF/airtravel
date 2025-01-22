@@ -14,6 +14,6 @@ class AppColor{
   static const sixcontainerborder = Color(0xFF069C57);
   static const chegirmacontainer = Color(0xFFE4DC19);
   static const animatedcontainercolor = Color(0xFFE0E0E0);
-
-
+  static const codecontainercolor = Color(0xFFEEEEEE);
+  static const pinputtextcolor = Color(0xFF212121);
 }

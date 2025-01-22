@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg.dart';
 import 'package:treval_app/core/utils/colors.dart';
 
@@ -10,16 +11,33 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  int selected_index = 0;
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      currentIndex: selected_index,
+      currentIndex: selectedIndex,
       onTap: (index) {
         setState(() {
-          selected_index = index;
+          selectedIndex = index;
         });
+        switch (index) {
+          case 0:
+            context.go("/");
+            break;
+          case 1:
+            context.go("/cards");
+            break;
+          case 2:
+            context.go("/orders");
+            break;
+          case 3:
+            context.go("/wallet");
+            break;
+          case 4:
+            context.go("/profile");
+            break;
+        }
       },
       selectedItemColor: AppColor.mainpagetextcolor,
       unselectedItemColor: AppColor.containerbordercolor,
@@ -28,39 +46,45 @@ class _NavBarState extends State<NavBar> {
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'assets/icons/home.svg',
-            color: selected_index == 0 ? AppColor.mainpagetextcolor: AppColor.containerbordercolor,
+            color: selectedIndex == 0
+                ? AppColor.mainpagetextcolor
+                : AppColor.containerbordercolor,
           ),
           label: "Home",
         ),
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'assets/icons/sumka.svg',
-            color: selected_index == 1 ? AppColor.mainpagetextcolor: AppColor.containerbordercolor,
-
+            color: selectedIndex == 1
+                ? AppColor.mainpagetextcolor
+                : AppColor.containerbordercolor,
           ),
           label: "Cart",
         ),
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'assets/icons/orders.svg',
-            color: selected_index == 2 ? AppColor.mainpagetextcolor: AppColor.containerbordercolor,
-
+            color: selectedIndex == 2
+                ? AppColor.mainpagetextcolor
+                : AppColor.containerbordercolor,
           ),
           label: "Orders",
         ),
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'assets/icons/wallet.svg',
-            color: selected_index == 3 ? AppColor.mainpagetextcolor: AppColor.containerbordercolor,
-
+            color: selectedIndex == 3
+                ? AppColor.mainpagetextcolor
+                : AppColor.containerbordercolor,
           ),
           label: "Wallet",
         ),
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'assets/icons/profile.svg',
-            color: selected_index == 4 ? AppColor.mainpagetextcolor : AppColor.containerbordercolor,
-
+            color: selectedIndex == 4
+                ? AppColor.mainpagetextcolor
+                : AppColor.containerbordercolor,
           ),
           label: "Profile",
         ),
