@@ -54,6 +54,10 @@ class SmsCodePage extends StatelessWidget {
               height: 80,
             ),
             Pinput(
+              obscureText: true,
+              keyboardType: TextInputType.number,
+              obscuringCharacter: "X",
+              showCursor: false,
               controller: controller,
               length: 4,
               defaultPinTheme: PinTheme(
@@ -68,8 +72,6 @@ class SmsCodePage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: AppColor.containerinsidetextcolor,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                      width: 2, color: AppColor.containerbordercolor),
                 ),
               ),
             ),

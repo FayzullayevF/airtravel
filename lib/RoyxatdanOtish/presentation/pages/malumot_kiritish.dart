@@ -60,6 +60,15 @@ class MalumotKiritish extends StatelessWidget {
               SizedBox(
                 height: 24,
               ),
+              TextFieldContainerTwo(),
+              SizedBox(
+                height: 24,
+              ),
+              TextFieldContainerThree(),
+              SizedBox(
+                height: 24,
+              ),
+              TextFieldContainerFour()
             ],
           ),
         ),
@@ -68,11 +77,16 @@ class MalumotKiritish extends StatelessWidget {
   }
 }
 
-class TextFieldContainerOne extends StatelessWidget {
+class TextFieldContainerOne extends StatefulWidget {
    TextFieldContainerOne({
     super.key,
   });
 
+  @override
+  State<TextFieldContainerOne> createState() => _TextFieldContainerOneState();
+}
+
+class _TextFieldContainerOneState extends State<TextFieldContainerOne> {
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -90,7 +104,7 @@ class TextFieldContainerOne extends StatelessWidget {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide.none
         ),
       ),
     );
@@ -109,7 +123,7 @@ class TextFieldContainerTwo extends StatelessWidget {
       decoration: InputDecoration(
         fillColor: AppColor.containerinsidetextcolor,
         filled: true,
-        hintText: "Ismingiz",
+        hintText: "Familiyangiz",
         hintStyle: TextStyle(
           color: AppColor.containerbordercolor,
           fontSize: 14,
@@ -137,7 +151,7 @@ class TextFieldContainerThree extends StatelessWidget {
       decoration: InputDecoration(
         fillColor: AppColor.containerinsidetextcolor,
         filled: true,
-        hintText: "Ismingiz",
+        hintText: "+998 99 999-99-99",
         hintStyle: TextStyle(
           color: AppColor.containerbordercolor,
           fontSize: 14,
@@ -152,4 +166,33 @@ class TextFieldContainerThree extends StatelessWidget {
     );
   }
 }
+class TextFieldContainerFour extends StatelessWidget {
+  TextFieldContainerFour({
+    super.key,
+  });
+
+  final TextEditingController controller = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        fillColor: AppColor.containerinsidetextcolor,
+        filled: true,
+        hintText: "Viloyatingiz",
+        hintStyle: TextStyle(
+          color: AppColor.containerbordercolor,
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          fontFamily: "Urbanist",
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide.none,
+        ),
+      ),
+    );
+  }
+}
+
 
