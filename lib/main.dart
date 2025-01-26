@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:treval_app/BatafsilPage/data/repositories/batafsil_page_repository.dart';
-import 'package:treval_app/BatafsilPage/presentation/pages/batafsil_page_view_model.dart';
+import 'package:treval_app/BatafsilPage/presentation/pages/batafsil_page_view.dart';
 import 'package:treval_app/RoyxatdanOtish/presentation/pages/malumot_kiritish.dart';
 import 'package:treval_app/RoyxatdanOtish/presentation/pages/royxatdan_otish.dart';
 import 'package:treval_app/RoyxatdanOtish/presentation/pages/sms_code_page.dart';
@@ -13,10 +12,7 @@ import 'package:treval_app/homepage/presentation/widgets/edit_data.dart';
 import 'package:treval_app/homepage/presentation/widgets/orders.dart';
 import 'package:treval_app/homepage/presentation/widgets/wallet.dart';
 import 'package:treval_app/onboarding/presentation/pages/onboarding_page.dart';
-import 'package:treval_app/onboarding/presentation/widgets/onborading_one.dart';
 import 'package:treval_app/sevimlilar/presentation/pages/sevimlilar_main_page.dart';
-
-import 'BatafsilPage/presentation/pages/batafsil_page_view.dart';
 import 'homepage/presentation/pages/profile.dart';
 
 GoRouter router = GoRouter(routes: [
@@ -26,18 +22,13 @@ GoRouter router = GoRouter(routes: [
   ),
   GoRoute(
     path: "/",
-    builder: (context, state) => MalumotKiritish(),
+    builder: (context, state) => OnboardingView(),
   ),
-  GoRoute(
-    path: "/batafsil",
-    builder: (context, state) {
-      final batafsilPageRepository = context.read<BatafsilPageRepository>();
-      return BatafsilMainPage(viewModel: BatafsilPageViewModel(
-      repo: batafsilPageRepository,
-    ),
-    );
-    }
-),
+  // GoRoute(
+  //     path: "/batafsil",
+  //     builder: (context, state) {
+  //       BatafsilMainPage();
+  //     }),
   GoRoute(
     path: "/cards",
     builder: (context, state) => Cards(),
@@ -70,8 +61,7 @@ GoRouter router = GoRouter(routes: [
     path: "/malumotlar",
     builder: (context, state) => MalumotKiritish(),
   ),
-]
-);
+]);
 
 void main() {
   runApp(const MyApp());
@@ -85,9 +75,6 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider(create: (context) => ApiClient()),
-        Provider(
-            create: (context) => BatafsilPageRepository(client: context.read()),
-        ),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

@@ -57,7 +57,6 @@ class SmsCodePage extends StatelessWidget {
               obscureText: true,
               keyboardType: TextInputType.number,
               obscuringCharacter: "X",
-              showCursor: false,
               controller: controller,
               length: 4,
               defaultPinTheme: PinTheme(

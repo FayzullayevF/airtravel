@@ -49,7 +49,9 @@ class MalumotKiritish extends StatelessWidget {
                   Positioned(
                     bottom: 0,
                     right: 7,
-                    child: SvgPicture.asset('assets/icons/edit.svg'),
+                    child: ElevatedButton(onPressed: (){
+
+                    },child: SvgPicture.asset('assets/icons/edit.svg')),
                   )
                 ]),
               ),

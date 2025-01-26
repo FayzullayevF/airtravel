@@ -11,6 +11,7 @@ class BatafsilPageBodeyModel {
   List<FeatureModel> feature;
   List<TariffsModel> tariffs;
   List<CalendarModel> calendar;
+  List<String> images;
 
   BatafsilPageBodeyModel({
     required this.id,
@@ -18,6 +19,7 @@ class BatafsilPageBodeyModel {
     required this.description,
     required this.start_data,
     required this.end_data,
+    required this.images,
     required this.stay,
     required this.feature,
     required this.tariffs,
@@ -38,7 +40,8 @@ class BatafsilPageBodeyModel {
       stay: rawStay.map((stays)=> StaysModel.fromJson(stays)).toList(),
       feature: rawFeature.map((features)=> FeatureModel.fromJson(features)).toList(),
       tariffs: rawTariffs.map((tariff)=> TariffsModel.fromJson(tariff)).toList(),
-      calendar: rawCalendar.map((calendars)=> CalendarModel.fromJson(calendars)).toList()
+      calendar: rawCalendar.map((calendars)=> CalendarModel.fromJson(calendars)).toList(),
+      images: json['images'] as List<String>
     );
   }
 }

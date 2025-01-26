@@ -1,21 +1,19 @@
 import 'package:flutter/cupertino.dart';
-import 'package:treval_app/BatafsilPage/data/models/batafsil_page_model.dart';
-import 'package:treval_app/BatafsilPage/data/repositories/batafsil_page_repository.dart';
+import 'package:treval_app/BatafsilPage/data/models/batafsil_page_body_model.dart';
+import 'package:treval_app/BatafsilPage/data/repositories/batafsil_page_body_repository.dart';
 
 class BatafsilPageViewModel extends ChangeNotifier{
   BatafsilPageViewModel({
     required BatafsilPageRepository repo,
-}): _repo = repo{
-    load();
-  }
+}): _repo = repo;
 
 
   final BatafsilPageRepository _repo;
   bool loading = true;
-  List<BatafsilPageModel> viewModel = [];
+  BatafsilPageBodeyModel? model;
 
-  Future<void> load() async{
-    viewModel = await _repo.fetchSpecialOffers();
+  Future<void> load(int detailId) async{
+    model = await _repo.fetchPackageById(detailId);
     loading = false;
     notifyListeners();
   }

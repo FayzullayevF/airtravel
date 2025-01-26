@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:treval_app/onboarding/presentation/widgets/onboarding_four.dart';
-import 'package:treval_app/onboarding/presentation/widgets/onboarding_three.dart';
 import 'package:treval_app/onboarding/presentation/widgets/onboarding_two.dart';
 import 'package:treval_app/onboarding/presentation/widgets/onborading_one.dart';
 
